@@ -9,6 +9,7 @@ import { COMMENTS } from "../shared/comments";
 import { PROMOTIONS } from "../shared/promotions";
 import { LEADERS } from "../shared/leaders";
 import Home from "./HomeComponent";
+import About from "./AboutComponent";
 import { Switch, Redirect, Route } from "react-router-dom";
 import Contact from "./ContactComponent";
 class Main extends Component {
@@ -77,20 +78,12 @@ class Main extends Component {
                     />
                     <Route path='/contactus' component={Contact}></Route>
                     <Route path='/menu/:dishId' component={DishWithId} />
+                    <Route
+                        path='/aboutus'
+                        component={() => <About leaders={this.state.leaders} />}
+                    />
                     <Redirect to='/home' />
                 </Switch>
-
-                {/* <Menu
-                    dishes={this.state.dishes}
-                    onClick={(dishId) => this.onDishSelect(dishId)}
-                /> */}
-                <DishDetail
-                    dish={
-                        this.state.dishes.filter(
-                            (dish) => dish.id === this.state.selectedDish
-                        )[0]
-                    }
-                />
                 <Footer />
             </div>
         );
