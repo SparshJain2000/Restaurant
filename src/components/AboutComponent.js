@@ -16,6 +16,7 @@ function RenderLeader({ leader }) {
                 <Media
                     object
                     className='mr-3'
+                    style={{ width: "15em", height: "15em" }}
                     src={leader.image}
                     alt={leader.name}
                 />

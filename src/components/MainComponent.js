@@ -87,7 +87,6 @@ class Main extends Component {
                                 <About leaders={this.props.leaders} />
                             )}
                         />
-                        } />
                         <Route
                             exact
                             path='/menu'
@@ -96,8 +95,7 @@ class Main extends Component {
                             )}
                         />
                         <Route path='/menu/:dishId' component={DishWithId} />
-                        <Route exact path='/contactus' component={Contact} />}
-                        />
+                        <Route exact path='/contactus' component={Contact} />
                         <Redirect to='/home' />
                     </Switch>
                 </div>
