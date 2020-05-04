@@ -10,10 +10,10 @@ import { connect } from "react-redux";
 import Home from "./HomeComponent";
 import About from "./AboutComponent";
 import { actions } from "react-redux-form";
-// import { addComment } from "../redux/ActionCreators";
+// import { postComment } from "../redux/ActionCreators";
 
 import {
-    addComment,
+    postComment,
     fetchDishes,
     fetchComments,
     fetchPromos,
@@ -29,8 +29,8 @@ const mapStateToProps = (state) => {
     };
 };
 const mapDispatchToProps = (dispatch) => ({
-    addComment: (dishId, rating, author, comment) =>
-        dispatch(addComment(dishId, rating, author, comment)),
+    postComment: (dishId, rating, author, comment) =>
+        dispatch(postComment(dishId, rating, author, comment)),
     fetchDishes: () => {
         dispatch(fetchDishes());
     },
@@ -95,7 +95,7 @@ class Main extends Component {
                             comment.dishId === parseInt(match.params.dishId, 10)
                     )}
                     commentsErrMess={this.props.comments.errMess}
-                    addComment={this.props.addComment}
+                    postComment={this.props.postComment}
                 />
             );
         };
