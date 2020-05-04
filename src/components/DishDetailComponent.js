@@ -17,13 +17,14 @@ import {
 } from "reactstrap";
 import { Loading } from "./LoadingComponent";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../shared/baseUrl";
 import { Control, LocalForm, Errors } from "react-redux-form";
 function RenderDish({ dish }) {
     if (!dish) return <div></div>;
     return (
         <div>
             <Card>
-                <CardImg top src={dish.image} alt={dish.name} />
+                <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                 <CardBody>
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
