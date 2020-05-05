@@ -13,6 +13,7 @@ import { actions } from "react-redux-form";
 
 import {
     postComment,
+    postFeedback,
     fetchDishes,
     fetchComments,
     fetchPromos,
@@ -31,6 +32,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     postComment: (dishId, rating, author, comment) =>
         dispatch(postComment(dishId, rating, author, comment)),
+
+    postFeedback: (values) => dispatch(postFeedback(values)),
     fetchDishes: () => {
         dispatch(fetchDishes());
     },
@@ -139,6 +142,9 @@ class Main extends Component {
                                         <Contact
                                             resetFeedbackForm={
                                                 this.props.resetFeedbackForm
+                                            }
+                                            postFeedback={
+                                                this.props.postFeedback
                                             }
                                         />
                                     )}

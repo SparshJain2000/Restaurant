@@ -200,3 +200,48 @@ export const addLeaders = (leaders) => ({
     type: ActionTypes.ADD_LEADERS,
     payload: leaders,
 });
+
+export const postFeedback = (values) => (dispatch) => {
+    const newFeedback = {
+        firstname: values.firstname,
+        lastname: values.lastname,
+        telnum: values.telnum,
+        email: values.email,
+        agree: values.agree,
+        contactType: values.contactType,
+        message: values.message,
+    };
+    return fetch(baseUrl + "feedback", {
+        method: "POST",
+        body: JSON.stringify(newFeedback),
+        headers: {
+            "Content-type": "application/json",
+        },
+        credential: "same-origin",
+    })
+        .then(
+            (response) => {
+                if (response.ok) {
+                    return response;
+                } else {
+                    var error = new Error(
+                        "Error " + response.status + ": " + response.statusText
+                    );
+                    error.response = response;
+                    throw error;
+                }
+            },
+            (error) => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            }
+        )
+        .then((response) => response.json())
+        .then((response) =>
+            alert("Thank you for your feedback!" + JSON.stringify(response))
+        )
+        .catch((error) => {
+            console.log(error.message);
+            alert("Comment cant be posted \nError : " + error.message);
+        });
+};
