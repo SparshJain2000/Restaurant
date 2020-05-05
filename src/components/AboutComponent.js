@@ -7,8 +7,9 @@ import {
     CardHeader,
     Media,
 } from "reactstrap";
+import { Loading } from "./LoadingComponent";
 import { Link } from "react-router-dom";
-
+import { baseUrl } from "../shared/baseUrl";
 function RenderLeader({ leader }) {
     return (
         <Media className='m-3'>
@@ -17,7 +18,7 @@ function RenderLeader({ leader }) {
                     object
                     className='mr-3'
                     style={{ width: "15em", height: "15em" }}
-                    src={leader.image}
+                    src={baseUrl + leader.image}
                     alt={leader.name}
                 />
             </Media>
@@ -30,8 +31,26 @@ function RenderLeader({ leader }) {
     );
 }
 function About(props) {
-    const leaders = props.leaders.map((leader) => {
-        return <RenderLeader leader={leader} />;
+    const leaders = props.leaders.leaders.map((leader) => {
+        if (props.leaders.isLoading) {
+            return (
+                <div className='container'>
+                    <div className='row'>
+                        <Loading />
+                    </div>
+                </div>
+            );
+        } else if (props.leaders.errMess) {
+            return (
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <h4>{props.leaders.errMess}</h4>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else return <RenderLeader leader={leader} />;
     });
 
     return (
