@@ -3,15 +3,13 @@ import {
     Breadcrumb,
     BreadcrumbItem,
     Button,
-    FormGroup,
     Label,
-    Input,
     Col,
     Row,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 // import { Control, LocalForm, Errors } from "react-redux-form";
-import { Control, Form, Errors, actions, LocalForm } from "react-redux-form";
+import { Control, Form, Errors } from "react-redux-form";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -62,7 +60,7 @@ class Contact extends Component {
                     </div>
                     <div className='col-12 col-sm-4 offset-sm-1'>
                         <h5>Our Address</h5>
-                        <address>
+                        <address className='text-white'>
                             121, Clear Water Bay Road
                             <br />
                             Clear Water Bay, Kowloon
@@ -79,9 +77,9 @@ class Contact extends Component {
                             </a>
                         </address>
                     </div>
-                    <div className='col-12 col-sm-6 offset-sm-1'>
+                    {/* <div className='col-12 col-sm-6 offset-sm-1'>
                         <h5>Map of our Location</h5>
-                    </div>
+                    </div> */}
                     <div className='col-12 col-sm-11 offset-sm-1'>
                         <div className='btn-group' role='group'>
                             <a
@@ -90,7 +88,10 @@ class Contact extends Component {
                                 href='tel:+85212345678'>
                                 <i className='fa fa-phone'></i> Call
                             </a>
-                            <a role='button' className='btn btn-info'>
+                            <a
+                                role='button'
+                                href='https://www.skype.com/en/'
+                                className='btn btn-info'>
                                 <i className='fa fa-skype'></i> Skype
                             </a>
                             <a

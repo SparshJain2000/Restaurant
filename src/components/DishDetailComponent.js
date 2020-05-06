@@ -70,8 +70,6 @@ function RenderComments({ comments, postComment, dishId }) {
     );
 }
 const DishDetail = (props) => {
-    // const dish = props.dish;
-    // console.log(dish);
     if (!props.dish) return <div></div>;
 
     if (props.isLoading) {

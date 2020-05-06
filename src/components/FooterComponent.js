@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class Footer extends Component {
     render() {
         return (
-            <div className='footer'>
+            <div className='footer bg-danger text-white'>
                 <div className='container'>
                     <div className='row justify-content-center'>
                         <div className='col-4 offset-1 col-sm-2'>
@@ -26,7 +26,7 @@ export default class Footer extends Component {
                         </div>
                         <div className='col-7 col-sm-5'>
                             <h5>Our Address</h5>
-                            <address>
+                            <address className='text-white'>
                                 121, Clear Water Bay Road
                                 <br />
                                 Clear Water Bay, Kowloon

@@ -60,7 +60,7 @@ function About(props) {
     });
 
     return (
-        <div className='container'>
+        <div className='container '>
             <div className='row'>
                 <Breadcrumb>
                     <BreadcrumbItem>
@@ -98,7 +98,7 @@ function About(props) {
                         <CardHeader className='bg-primary text-white'>
                             Facts At a Glance
                         </CardHeader>
-                        <CardBody>
+                        <CardBody className=' bg-dark'>
                             <dl className='row p-1'>
                                 <dt className='col-6'>Started</dt>
                                 <dd className='col-6'>3 Feb. 2013</dd>
