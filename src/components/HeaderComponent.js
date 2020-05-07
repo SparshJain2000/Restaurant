@@ -113,7 +113,12 @@ class Header extends Component {
                 <Jumbotron className='bg-danger'>
                     <div className='container'>
                         <div className='row row-header'>
-                            <div className='col-12 col-sm-6'>
+                            <div
+                                className='col-12 col-md-3'
+                                style={{ textAlign: "center" }}>
+                                <img src='assets/images/logo.png' alt='logo' />
+                            </div>
+                            <div className='col-12 col-md-9'>
                                 <h1>Ristorante con Fusion</h1>
                                 <p>
                                     We take inspiration from the World's best

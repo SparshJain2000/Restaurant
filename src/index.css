@@ -15,6 +15,11 @@ a {
     color: #000;
 }
 
+a:hover {
+    color: rgb(255, 187, 0);
+    text-decoration: none;
+}
+
 .card {
     color: black
 }

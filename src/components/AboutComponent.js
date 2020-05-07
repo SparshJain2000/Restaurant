@@ -95,10 +95,10 @@ function About(props) {
                 </div>
                 <div className='col-12 col-md-5'>
                     <Card>
-                        <CardHeader className='bg-primary text-white'>
+                        <CardHeader className='bg-primary '>
                             Facts At a Glance
                         </CardHeader>
-                        <CardBody className=' bg-dark'>
+                        <CardBody className=' bg-dark text-white'>
                             <dl className='row p-1'>
                                 <dt className='col-6'>Started</dt>
                                 <dd className='col-6'>3 Feb. 2013</dd>
